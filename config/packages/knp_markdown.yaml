@@ -1,0 +1,4 @@
+knp_markdown:
+    parser:
+        service: markdown.parser.light
+# But this 'light' service is not working

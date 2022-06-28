@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Question{% endblock %}
+
+{% block body %}
+    <h1>Question</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ question.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ question.name }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ question.slug }}</td>
+            </tr>
+            <tr>
+                <th>Question</th>
+                <td>{{ question.question }}</td>
+            </tr>
+            <tr>
+                <th>AskedAt</th>
+                <td>{{ question.askedAt ? question.askedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Votes</th>
+                <td>{{ question.votes }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ question.createdAt ? question.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ question.updatedAt ? question.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_questions_dash_board_index') }}">back to list</a>
+
+    <a href="{{ path('app_questions_dash_board_edit', {'id': question.id}) }}">edit</a>
+
+    {{ include('questions_dash_board/_delete_form.html.twig') }}
+{% endblock %}

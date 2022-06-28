@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Answer{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Add new Answer</h1>
+
+    {{ include('answer_dash_board/_form.html.twig') }}
+
+    <a href="{{ path('app_answer_dash_board_index') }}">back to Home</a>
+</div>    
+{% endblock %}
