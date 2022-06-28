@@ -22,8 +22,7 @@ RUN apt-get update && apt-get install -y yarn
 
 
 
-RUN composer install \
-    && bin/console make:migration
+RUN composer install --no-scripts --no-autoloader 
 RUN git config --global user.email "sakshigoraniya13@gmail.com" \ 
     && git config --global user.name "SakshiGoraniya"  
   
