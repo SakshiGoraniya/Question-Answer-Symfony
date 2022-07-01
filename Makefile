@@ -1,5 +1,9 @@
-init: composer-install migrate
+init: docker-build docker-up composer-install migrate
 
+docker-build:
+	docker-compose build 
+docker-up:
+	docker-compose up -d	
 composer-install: 
 	docker-compose run --rm php composer install
 migrate:
